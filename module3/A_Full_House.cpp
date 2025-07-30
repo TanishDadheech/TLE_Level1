@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 
-    int count[14]={};
+    int count[14]={};//frequency array(important concept)
     int a[5];
 
     for(int i=0;i<5;i++){

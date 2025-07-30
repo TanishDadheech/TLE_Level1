@@ -3,23 +3,24 @@
 using namespace std;
 
 int main(){
+
+    int count[14]={};
     int a[5];
 
     for(int i=0;i<5;i++){
         cin>>a[i];
+        count[a[i]]++;
     }
 
-    int count1=1;
-    int count2=1;
+    bool has3=false;
+    bool has2=false;
 
-    for(int i=2;i<5;i++){
-        if(a[i]==a[0])
-            count1++;
-        if(a[i]==a[1])
-            count2++;
+    for(int i=0;i<14;i++){
+        if(count[i]==3)has3=true;
+        if(count[i]==2)has2=true;
     }
 
-    if((count1+count2==5))
+    if(has3&&has2)
         cout<<"Yes"<<endl;
     else
         cout<<"No"<<endl;

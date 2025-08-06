@@ -27,5 +27,5 @@ int main(){
 
         cout<<mexa+mexb<<endl;
     }
-
+    return 0;
 }

@@ -5,31 +5,28 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int N, M;
-    cin >> N >> M;
+    int N;
+    cin >> N;
+    string T;
+    cin >> T;
 
-    long long A[1000], B[1000]; // since N, M ≤ 1000
+    long long x = 0, y = 0;
+    char dir = 'E'; // E, S, W, N
 
-    for (int i = 0; i < N; i++) cin >> A[i];
-    for (int i = 0; i < M; i++) cin >> B[i];
-
-    bool possible = true;
-
-    for (int i = 0; i < M; i++) {
-        bool found = false;
-        for (int j = 0; j < N; j++) {
-            if (A[j] == B[i]) {
-                A[j] = -1; // mark as used
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            possible = false;
-            break;
+    for (char c : T) {
+        if (c == 'S') {
+            if (dir == 'E') x++;
+            else if (dir == 'S') y--;
+            else if (dir == 'W') x--;
+            else if (dir == 'N') y++;
+        } else if (c == 'R') {
+            if (dir == 'E') dir = 'S';
+            else if (dir == 'S') dir = 'W';
+            else if (dir == 'W') dir = 'N';
+            else if (dir == 'N') dir = 'E';
         }
     }
 
-    cout << (possible ? "Yes" : "No") << "\n";
+    cout << x << " " << y << "\n";
     return 0;
 }

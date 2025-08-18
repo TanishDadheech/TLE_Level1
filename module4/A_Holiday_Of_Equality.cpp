@@ -11,12 +11,16 @@ int main() {
     int arr[n];
     for(int i=0;i<n;i++) cin>>arr[i];
 
-    int maxi=INT_MIN;
+    //This is the traditional way to find the maximum value in an array.
+    // int maxi=INT_MIN;
 
-    for(int i=0;i<n;i++){
-        if(arr[i]>maxi)
-            maxi=arr[i];
-    }
+    // for(int i=0;i<n;i++){
+    //     if(arr[i]>maxi)
+    //         maxi=arr[i];
+    // }
+
+    //Another and efficient way
+    int maxi=*max_element(arr,arr+n); //Will find the maximum element from the whole array.
 
     int ans=0;
 

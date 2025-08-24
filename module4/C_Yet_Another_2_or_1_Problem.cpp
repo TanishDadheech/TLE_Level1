@@ -15,7 +15,7 @@ int main() {
         while (k > 0) {
             const int m = (int)s.size();
 
-            // Check palindrome and "all same" in one pass
+            // Check palindrome and "all same" in one pss
             bool pal = true;
             bool allsame = true;
             char c0 = s[0];
